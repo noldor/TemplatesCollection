@@ -1,0 +1,5 @@
+<template src="./template.${templateType}"#if (${functionalComponent} == true) functional#end></template>
+<script src="./script.${scriptType}"></script>
+#if (${styleType} != "none")
+<style src="./style.${styleType}"#if (${scopedStyles} == true) scoped#end></style>
+#end

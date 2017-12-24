@@ -1,0 +1,29 @@
+<idea-plugin>
+    <id>org.noldor.templatesCollection</id>
+    <name>Templates Collection</name>
+    <version>0.0.1</version>
+    <vendor>Noldor</vendor>
+
+    <description></description>
+
+    <change-notes></change-notes>
+
+    <idea-version since-build="173.0"/>
+
+    <depends>JavaScript</depends>
+    <depends>com.intellij.modules.platform</depends>
+    <depends>org.jetbrains.plugins.vue</depends>
+
+    <extensions defaultExtensionNs="com.intellij">
+        <internalFileTemplate name="Vue Component"/>
+        <createFromTemplateHandler implementation="org.noldor.templatesCollection.vue.CreateFromTemplateHandler"/>
+    </extensions>
+
+    <actions>
+        <action class="org.noldor.templatesCollection.vue.CreateSingleFileComponentAction"
+                id="CreateVueSingleFileComponent" text="!!! VUE" description="!!! VUE component">
+            <add-to-group group-id="NewGroup" anchor="before" relative-to-action="NewFromTemplate"/>
+        </action>
+    </actions>
+
+</idea-plugin>

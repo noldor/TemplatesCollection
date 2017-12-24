@@ -1,0 +1,49 @@
+buildscript {
+    ext.kotlin_version = '1.2.10'
+
+    repositories {
+        mavenCentral()
+        maven { url 'http://dl.bintray.com/jetbrains/intellij-plugin-service' }
+    }
+
+    dependencies {
+        classpath "org.jetbrains.kotlin:kotlin-gradle-plugin:$kotlin_version"
+    }
+}
+
+plugins {
+    id "org.jetbrains.intellij" version "0.2.17"
+}
+
+sourceSets {
+    main {
+        java {
+            srcDirs 'src'
+            srcDirs 'gen'
+        }
+        resources {
+            srcDirs 'resources'
+        }
+    }
+}
+
+apply plugin: "kotlin"
+
+version="173.7000"
+intellij {
+    version 'IU-173.4127.2'
+    pluginName 'TemplatesCollection'
+    downloadSources false
+    updateSinceUntilBuild false
+    plugins = ['JavaScriptLanguage', 'CSS', 'JavaScriptDebugger', 'org.jetbrains.plugins.vue:173.3942.31']
+}
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+    compile "org.jetbrains.kotlin:kotlin-stdlib:$kotlin_version"
+    compile "org.jetbrains.kotlin:kotlin-reflect:$kotlin_version"
+}
+

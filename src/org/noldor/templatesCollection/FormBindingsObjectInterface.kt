@@ -1,0 +1,3 @@
+package org.noldor.templatesCollection
+
+interface FormBindingsObjectInterface
