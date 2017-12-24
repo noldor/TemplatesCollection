@@ -21,7 +21,7 @@
 
     <actions>
         <action class="org.noldor.templatesCollection.vue.CreateSingleFileComponentAction"
-                id="CreateVueSingleFileComponent" text="!!! VUE" description="!!! VUE component">
+                id="CreateVueSingleFileComponent" text="Vue component" description="Vue component">
             <add-to-group group-id="NewGroup" anchor="before" relative-to-action="NewFromTemplate"/>
         </action>
     </actions>
