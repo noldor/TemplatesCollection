@@ -25,7 +25,9 @@ private fun transform(string: String): String {
     var firstWordNotFound = true
     for (i in words.indices) {
         val word = words[i]
-        if (firstWordNotFound && startsWithLetter(word)) {
+        if (word === "") {
+            continue
+        } else if (firstWordNotFound && startsWithLetter(word)) {
             words[i] = word.toLowerCase()
             firstWordNotFound = false
         } else {
@@ -37,7 +39,7 @@ private fun transform(string: String): String {
 }
 
 private fun join(array: Array<out String>): String {
-    return join(array, null)
+    return join(array, "")
 }
 
 private fun join(array: Array<out String>, separator: String?): String {
